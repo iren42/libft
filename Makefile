@@ -6,7 +6,7 @@
 #    By: iren <iren@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/01 16:49:57 by iren              #+#    #+#              #
-#    Updated: 2020/09/01 16:50:29 by iren             ###   ########.fr        #
+#    Updated: 2020/09/01 21:10:12 by iren             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = ft_lstnew.c      ft_strlcat.c \
 	ft_isdigit.c       ft_memcpy.c      ft_strtrim.c \
 	ft_isprint.c       ft_memmove.c     ft_substr.c \
 	ft_itoa.c          ft_memset.c      ft_tolower.c \
-	ft_putchar_fd.c  ft_toupper.c \
+	ft_putchar_fd.c  ft_toupper.c 		ft_putendl_fd.c\
 	ft_putnbr_fd.c	 ft_putstr_fd.c   \
 	ft_split.c		ft_strchr.c \
 	ft_strdup.c		ft_strjoin.c \
