@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 21:12:46 by iren              #+#    #+#             */
-/*   Updated: 2020/09/01 00:08:42 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/01 19:18:23 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 ** DESCRIPTION
 **  The  calloc() function allocates memory for an array of nmemb elements
 **	of size bytes each and returns a pointer to the allocated memory.
-**  The memory is set to zero.  If nmemb or size is 0, then cal‐
-**  loc() returns either NULL, or a unique pointer value that can later
+**  The memory is set to zero.  If nmemb or size is 0, then calloc()
+**  returns either NULL, or a unique pointer value that can later
 **	be successfully passed to free().
 **
 ** RETURN VALUE
