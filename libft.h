@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 19:23:49 by iren              #+#    #+#             */
-/*   Updated: 2020/09/01 16:50:58 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/01 16:59:16 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef unsigned int size_t;
+typedef unsigned long size_t;
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
