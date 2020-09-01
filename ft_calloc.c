@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 21:12:46 by iren              #+#    #+#             */
-/*   Updated: 2020/09/01 19:18:23 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/01 19:53:20 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 **
 ** RETURN VALUE
 **  The malloc() and calloc() functions return a pointer to the allocated
-**	memory, which is suitably aligned for any built-in type.
+**	memory, which is suitably aligned for any built in type.
 **  On error, these functions return NULL.  NULL may also be returned by a
 **  successful call to malloc() with a size of zero, or by a successful
 **	call to calloc() with nmemb or size equal to zero.
