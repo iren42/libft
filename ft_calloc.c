@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 21:12:46 by iren              #+#    #+#             */
-/*   Updated: 2020/09/01 19:53:20 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 22:50:56 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	i;
 
 	i = 0;
-	if (!(s = malloc(sizeof(size) * (nmemb + 1))))
+	if (nmemb == 0 || size == 0)
+		return (malloc(1));
+	if (!(s = malloc(size * nmemb)))
 		return (0);
-	while (i < nmemb && size != 0)
+	while (i < nmemb)
 	{
 		s[i] = 0;
 		i++;
