@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 19:32:54 by iren              #+#    #+#             */
-/*   Updated: 2020/09/03 00:55:25 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/03 00:59:41 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ static char		*ft_fill(char *dest, const char *str, int len)
 	i = 0;
 	if (str != 0)
 	{
-	if (!(dest = malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	while (i < len)
-	{
-		dest[i] = str[i];
-		i++;
-	}
+		if (!(dest = malloc(sizeof(char) * (len + 1))))
+			return (NULL);
+		while (i < len)
+		{
+			dest[i] = str[i];
+			i++;
+		}
 	}
 	dest[i] = '\0';
 	return (dest);
@@ -51,15 +51,15 @@ static int		ft_nb_words(const char *s, char c)
 	nb_w = 0;
 	if (s != 0)
 	{
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0' && s[i] != c)
-			nb_w++;
-		while (s[i] != '\0' && s[i] != c)
-			i++;
-	}
+		while (s[i])
+		{
+			while (s[i] == c)
+				i++;
+			if (s[i] != '\0' && s[i] != c)
+				nb_w++;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+		}
 	}
 	return (nb_w);
 }
@@ -68,11 +68,11 @@ static void		split_loop(const char *str, char c, int *i, int *len)
 {
 	if (str != 0)
 	{
-	while (str[*i] != c && str[*i])
-	{
-		(*len)++;
-		(*i)++;
-	}
+		while (str[*i] != c && str[*i])
+		{
+			(*len)++;
+			(*i)++;
+		}
 	}
 }
 

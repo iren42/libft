@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 15:22:03 by iren              #+#    #+#             */
-/*   Updated: 2020/09/01 20:08:53 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/03 01:26:49 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ void	ft_putstr_fd(char *s, int fd)
 	unsigned int i;
 
 	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	if (s != 0)
+		while (s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
 }
