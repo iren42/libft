@@ -6,7 +6,7 @@
 /*   By: isabelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 11:19:48 by isabelle          #+#    #+#             */
-/*   Updated: 2020/09/01 15:24:22 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 23:49:01 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 		nb *= (-1);
 		write(fd, "-", 1);
 	}
-	while (nb > 10)
+	while (nb >= 10)
 	{
 		ft_putnbr_fd(nb / 10, fd);
 		nb = nb % 10;
