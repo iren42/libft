@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 15:43:16 by iren              #+#    #+#             */
-/*   Updated: 2020/09/02 22:47:25 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 23:38:56 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,28 @@ static char	*ft_mirror(char *s)
 	return (res);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+static char	*ft_sub(char *s1, char const *set)
 {
+	unsigned int	i;
 	char			*buffer;
 	char			*mirror;
-	char			*final;
-	unsigned int	i;
 
 	i = 0;
-	while (s1[i] && ft_strchr(set, s1[i]))
+	while (s1[i] && ft_strchr(set, (int)s1[i]))
 		i++;
 	buffer = ft_substr(s1, i, ft_strlen(s1) - i);
 	mirror = ft_mirror(buffer);
 	free(buffer);
-	i = 0;
-	while (s1[i] && ft_strchr(set, mirror[i]))
-		i++;
-	buffer = ft_substr(mirror, i, ft_strlen(s1) - i);
+	return (mirror);
+}
+
+char		*ft_strtrim(char const *s1, char const *set)
+{
+	char			*mirror;
+	char			*final;
+
+	mirror = ft_sub((char*)s1, set);
+	final = ft_sub(mirror, set);
 	free(mirror);
-	final = ft_mirror(buffer);
-	free(buffer);
 	return (final);
 }
