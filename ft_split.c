@@ -6,18 +6,27 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 19:32:54 by iren              #+#    #+#             */
-/*   Updated: 2020/09/01 15:18:59 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 17:21:06 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_fill(char *dest, char *str, int len)
+static void		ft_free_split(char **split, int i)
+{
+	while (i >= 0)
+		free(split[i--]);
+	free(split);
+	split = 0;
+}
+
+static char		*ft_fill(char *dest, const char *str, int len)
 {
 	int i;
 
 	i = 0;
-	dest = malloc(sizeof(char) * (len + 1));
+	if (!(dest = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
 	while (i < len)
 	{
 		dest[i] = str[i];
@@ -27,23 +36,26 @@ static char		*ft_fill(char *dest, char *str, int len)
 	return (dest);
 }
 
-static int		ft_nb_c(char *s, char c)
+static int		ft_nb_words(const char *s, char c)
 {
 	int i;
-	int nb_c;
+	int nb_w;
 
 	i = 0;
-	nb_c = 0;
+	nb_w = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-			nb_c++;
-		i++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0' && s[i] != c)
+			nb_w++;
+		while (s[i] != '\0' && s[i] != c)
+			i++;
 	}
-	return (nb_c);
+	return (nb_w);
 }
 
-static void		split_loop(char *str, char c, int *i, int *len)
+static void		split_loop(const char *str, char c, int *i, int *len)
 {
 	while (str[*i] != c && str[*i])
 	{
@@ -52,9 +64,8 @@ static void		split_loop(char *str, char c, int *i, int *len)
 	}
 }
 
-char			**ft_split(char const *s, char c)
+char			**ft_split(char const *str, char c)
 {
-	char	*str;
 	int		len;
 	int		i;
 	int		a;
@@ -62,15 +73,18 @@ char			**ft_split(char const *s, char c)
 
 	a = 0;
 	i = 0;
-	str = (char*)s;
-	res = malloc(sizeof(char*) * (ft_nb_c(str, c) + 2));
-	while (str[i] && a <= ft_nb_c(str, c))
+	if (!(res = malloc(sizeof(char*) * (ft_nb_words(str, c) + 1))))
+		return (0);
+	while (a < ft_nb_words(str, c) && !(len = 0))
 	{
-		len = 0;
 		split_loop(str, c, &i, &len);
 		if (len > 0)
 		{
-			res[a] = ft_fill(res[a], &str[i - len], len);
+			if ((res[a] = ft_fill(res[a], &str[i - len], len)) == 0)
+			{
+				ft_free_split(res, a);
+				return (0);
+			}
 			a++;
 		}
 		i++;
