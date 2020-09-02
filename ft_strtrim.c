@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 15:43:16 by iren              #+#    #+#             */
-/*   Updated: 2020/09/02 23:47:21 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 23:51:27 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,10 @@ char		*ft_strtrim(char const *s1, char const *set)
 			return (0);
 		return (final);
 	}
-	mirror = ft_sub((char*)s1, set);
-	final = ft_sub(mirror, set);
-	free(mirror);
-	if (final == 0)
+	if (!(mirror = ft_sub((char*)s1, set)))
 		return (0);
+	if (!(final = ft_sub(mirror, set)))
+		return (0);
+	free(mirror);
 	return (final);
 }
