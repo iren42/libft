@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 18:52:41 by iren              #+#    #+#             */
-/*   Updated: 2020/09/02 22:43:43 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 22:45:51 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 
 int	ft_atoi(const char *s)
 {
-	long long	res;
-	int			i;
-	int			minus;
+	long	res;
+	int		i;
+	int		minus;
 
 	res = 0;
 	i = 0;
