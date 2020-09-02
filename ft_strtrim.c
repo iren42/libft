@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 15:43:16 by iren              #+#    #+#             */
-/*   Updated: 2020/09/02 23:43:31 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 23:47:21 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ static char	*ft_sub(char *s1, char const *set)
 	i = 0;
 	while (s1[i] && ft_strchr(set, (int)s1[i]))
 		i++;
-	buffer = ft_substr(s1, i, ft_strlen(s1) - i);
-	mirror = ft_mirror(buffer);
+	if (!(buffer = ft_substr(s1, i, ft_strlen(s1) - i)))
+		return (0);
+	if (!(mirror = ft_mirror(buffer)))
+		return (0);
 	free(buffer);
 	return (mirror);
 }
@@ -70,5 +72,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	mirror = ft_sub((char*)s1, set);
 	final = ft_sub(mirror, set);
 	free(mirror);
+	if (final == 0)
+		return (0);
 	return (final);
 }
