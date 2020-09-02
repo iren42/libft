@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 20:11:50 by iren              #+#    #+#             */
-/*   Updated: 2020/09/01 00:07:25 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 22:22:03 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	s1_char = (unsigned char*)s1;
 	s2_char = (unsigned char*)s2;
-	while ((s2_char[i] || s1_char[i]) && i < n)
+	while (i < n)
 	{
 		if (s1_char[i] != s2_char[i])
 			return (s1_char[i] - s2_char[i]);
