@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 15:43:16 by iren              #+#    #+#             */
-/*   Updated: 2020/09/02 23:38:56 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 23:43:31 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,12 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char			*mirror;
 	char			*final;
 
+	if (s1 == 0 || set == 0)
+	{
+		if (!(final = malloc(1)))
+			return (0);
+		return (final);
+	}
 	mirror = ft_sub((char*)s1, set);
 	final = ft_sub(mirror, set);
 	free(mirror);
