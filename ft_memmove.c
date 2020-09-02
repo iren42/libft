@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 17:03:51 by iren              #+#    #+#             */
-/*   Updated: 2020/09/01 15:01:24 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/03 01:34:26 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,25 @@
 
 #include "libft.h"
 
-static char	*ft_strncpy_mem(char *dest, char *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		dest[i] = src[i];
-		i++;
-		if (src[i] == '\0' && i < n)
-			dest[i] = '\0';
-	}
-	return (dest);
-}
-
 void		*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*s;
-	char	tmp[n + 1];
-	char	*d;
+	char			*s;
+	char			*d;
+	unsigned int	i;
 
-	d = (char*)dest;
+	i = 0;
 	s = (char*)src;
-	ft_strncpy_mem(tmp, s, n);
-	d = ft_strncpy_mem(d, tmp, n);
+	d = (char*)dest;
+	if (d == s)
+		return ((void*)d);
+	if (s > d)
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	else
+		while (n--)
+			d[n] = s[n];
 	return ((void*)d);
 }
