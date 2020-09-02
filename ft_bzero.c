@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 20:58:36 by iren              #+#    #+#             */
-/*   Updated: 2020/08/31 23:45:43 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 10:36:15 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
-	size_t			len;
-	unsigned char	*st;
-
-	i = 0;
-	st = s;
-	len = 0;
-	while (st[len])
-		len++;
-	while (i < n && i < len)
-	{
-		*(st + i) = 0;
-		i++;
-	}
+	ft_memset(s, 0, n);
 }
