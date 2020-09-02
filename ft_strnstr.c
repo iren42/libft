@@ -6,24 +6,9 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 18:05:51 by iren              #+#    #+#             */
-/*   Updated: 2020/08/31 16:51:17 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/01 21:26:13 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-**    strnstr — locate a substring in a string
-** DESCRIPTION
-**  The strnstr() function locates the first occurrence of the
-**  null-terminated string little in the string big, where not
-**  more than len characters are searched.  Characters that appear
-**  after a ‘\0’ character are not searched.
-**
-** RETURN VALUES
-**  If little is an empty string, big is returned; if little occurs
-**	nowhere in big, NULL is returned;
-**  otherwise a pointer to the first character of the first occurrence of
-**	little is returned.
-*/
 
 #include "libft.h"
 

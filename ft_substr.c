@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 22:53:49 by iren              #+#    #+#             */
-/*   Updated: 2020/09/01 15:15:06 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 09:04:10 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		res[i] = ss[start + i];
 		i++;
 	}
+	res[i] = '\0';
 	return (res);
 }
