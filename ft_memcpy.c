@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 18:14:53 by iren              #+#    #+#             */
-/*   Updated: 2020/09/01 00:05:13 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 22:05:49 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	s = (char*)src;
 	d = (char*)dest;
+	if (s == 0 || d == 0 || n == 0)
+		return (dest);
 	while (i < n)
 	{
-		d[i] = s[i];
+		ft_memset(&d[i], s[i], 1);
 		i++;
-		if (s[i] == '\0')
-			d[i] = '\0';
 	}
 	return ((void*)d);
 }
