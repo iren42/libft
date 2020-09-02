@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 15:43:16 by iren              #+#    #+#             */
-/*   Updated: 2020/09/02 09:03:34 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/02 15:03:06 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,47 +40,25 @@ static char	*ft_mirror(char *s)
 	return (res);
 }
 
-static char	*ft_strtrim2(char *ss1, char *sset, char *res)
-{
-	unsigned int i;
-	unsigned int j;
-
-	i = 0;
-	j = 0;
-	while (ss1[i])
-	{
-		j = 0;
-		while (sset[j])
-		{
-			if (ss1[i] == sset[j])
-				break ;
-			j++;
-		}
-		if (sset[j] == '\0')
-		{
-			ft_memcpy(res, &ss1[i], ft_strlen(ss1) - i);
-			break ;
-		}
-		i++;
-	}
-	return (res);
-}
-
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	char	*ss1;
-	char	*sset;
-	char	*intermediate;
-	char	*final;
+	char			*buffer;
+	char			*mirror;
+	char			*final;
+	unsigned int	i;
 
-	ss1 = (char*)s1;
-	sset = (char*)set;
-	intermediate = malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	final = malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	intermediate = ft_strtrim2(ss1, sset, intermediate);
-	intermediate = ft_mirror(intermediate);
-	final = ft_strtrim2(intermediate, sset, final);
-	final = ft_mirror(final);
-	free(intermediate);
+	i = 0;
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	buffer = ft_substr(s1, i, ft_strlen(s1) - i);
+	mirror = ft_mirror(buffer);
+	free(buffer);
+	i = 0;
+	while (s1[i] && ft_strchr(set, mirror[i]))
+		i++;
+	buffer = ft_substr(mirror, i, ft_strlen(s1) - i);
+	free(mirror);
+	final = ft_mirror(buffer);
+	free(buffer);
 	return (final);
 }
