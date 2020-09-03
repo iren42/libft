@@ -6,21 +6,9 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 18:52:41 by iren              #+#    #+#             */
-/*   Updated: 2020/09/02 22:45:51 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/03 10:04:10 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-**    atoi, atol, atoll - convert a string to an integer
-** DESCRIPTION
-**  The atoi() function converts the initial portion of the string
-**	pointed to by nptr to int.
-**	The behavior is the same as strtol(nptr, NULL, 10);
-**  except that atoi() does not detect errors.
-**
-** RETURN VALUE
-**        The converted value.
-*/
 
 int	ft_atoi(const char *s)
 {
