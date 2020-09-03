@@ -6,18 +6,9 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 15:43:16 by iren              #+#    #+#             */
-/*   Updated: 2020/09/02 23:51:27 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/03 10:27:43 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** PARAMETERS :
-** s1 > string to trim
-** s2 > reference set of the characters you want trimmed
-** RETURN :
-** The trimmed string
-** Or, NULL if allocation failed
-*/
 
 #include "libft.h"
 

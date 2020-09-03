@@ -6,19 +6,9 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 22:53:49 by iren              #+#    #+#             */
-/*   Updated: 2020/09/03 00:40:38 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/03 10:28:20 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** PARAMETERS :
-**	s 		> source string
-**	start 	> starting index of the new string from the source string
-**	len 	> maximum length of the new string
-** RETURN :
-** 	the new string
-** 	or if allocation failed, NULL
-*/
 
 #include "libft.h"
 

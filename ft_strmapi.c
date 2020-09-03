@@ -6,18 +6,9 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 23:35:12 by iren              #+#    #+#             */
-/*   Updated: 2020/09/02 12:16:44 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/03 10:19:04 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** PARAMETERS :
-** s	> string to iterate
-** (*f)	> function to apply to each character of 's'
-** RETURN :
-** The resulting string
-** Or, NULL if allocation failed
-*/
 
 #include "libft.h"
 
