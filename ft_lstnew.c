@@ -6,11 +6,10 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 10:37:34 by iren              #+#    #+#             */
-/*   Updated: 2020/05/18 16:48:22 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/03 10:13:21 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)

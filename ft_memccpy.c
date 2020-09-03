@@ -6,23 +6,9 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 17:01:19 by iren              #+#    #+#             */
-/*   Updated: 2020/09/02 22:13:23 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/03 10:13:53 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** memccpy - copy memory area
-** DESCRIPTION
-** 		The  memccpy()  function copies no more than n bytes from memory area
-**		src to memory area dest, stopping when the character c is found.
-**
-**		If the memory areas overlap, the results are undefined.
-**
-** RETURN VALUE
-**		The memccpy() function returns a pointer to the next character
-**		in dest after c,
-**		or NULL if c was not found in the first n characters of src.
-*/
 
 #include "libft.h"
 
