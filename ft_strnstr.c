@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 18:05:51 by iren              #+#    #+#             */
-/*   Updated: 2020/09/03 10:22:14 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/03 11:07:34 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *cbig, const char *clittle, size_t len)
 	i = 0;
 	j = 0;
 	len++;
-	if (!clittle || ft_strncmp(clittle, "", 1) == 0)
+	if (ft_strncmp(clittle, "", 1) == 0)
 		return ((char*)cbig);
 	while (cbig[i] && --len)
 	{
