@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/05 00:17:36 by iren              #+#    #+#             */
-/*   Updated: 2020/09/05 00:50:45 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/05 00:58:01 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
 {
 	t_list			*res;
 
-	if (lst == 0)
+	if (lst == 0 || (*del) == 0)
 		return (0);
 	if (!(res = malloc(sizeof(t_list) * (ft_lstsize(lst)))))
 		return (0);

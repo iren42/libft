@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/05 00:10:17 by iren              #+#    #+#             */
-/*   Updated: 2020/09/05 00:12:24 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/05 00:58:30 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst->next)
-	{
-		f(lst);
-		lst = lst->next;
-	}
+	if (lst != 0 || !(*f))
+		while (lst->next)
+		{
+			f(lst);
+			lst = lst->next;
+		}
 }
