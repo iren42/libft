@@ -6,7 +6,7 @@
 #    By: iren <iren@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/01 16:49:57 by iren              #+#    #+#              #
-#    Updated: 2020/09/04 10:41:56 by iren             ###   ########.fr        #
+#    Updated: 2020/09/04 21:32:31 by iren             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,11 +70,11 @@ all	: ${NAME}
 .c.o:
 		${CC} -I/${INCLUDE} ${CFLAGS} -g -c $< -o ${<:.c=.o}
 
-$(NAME) : ${OBJS}
+$(NAME) : ${OBJS} ${INCLUDE}
 	ar rc ${NAME} ${OBJS}
 	ranlib ${NAME}
 
-bonus	: ${OBJS_BONUS}
+bonus	: ${OBJS_BONUS} ${INCLUDE}
 	ar rc ${NAME} ${OBJS_BONUS}
 	ranlib ${NAME}
 
