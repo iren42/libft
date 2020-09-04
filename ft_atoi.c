@@ -36,5 +36,5 @@ int	ft_atoi(const char *s)
 		return (-1);
 	if (res > 2147483648 && minus < 0)
 		return (0);
-	return ((int)minus * res);
+	return ((int)(minus * res));
 }
