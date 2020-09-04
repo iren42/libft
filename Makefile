@@ -6,7 +6,7 @@
 #    By: iren <iren@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/01 16:49:57 by iren              #+#    #+#              #
-#    Updated: 2020/09/04 21:32:31 by iren             ###   ########.fr        #
+#    Updated: 2020/09/05 00:42:36 by iren             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRCS = ft_strlcat.c \
 	ft_split.c	\
 	ft_strchr.c \
 	ft_strdup.c	\
-	ft_strjoin.c \
+	ft_strjoin.c 
 
 SRCS_BONUS = ft_lstnew.c \
 			 ft_lstadd_front.c \
@@ -52,6 +52,8 @@ SRCS_BONUS = ft_lstnew.c \
 			 ft_lstadd_back.c \
 			 ft_lstdelone.c \
 			 ft_lstclear.c \
+			 ft_lstiter.c \
+			 ft_lstmap.c
 
 OBJS = ${SRCS:.c=.o}
 
