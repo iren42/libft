@@ -6,7 +6,7 @@
 /*   By: iren <iren@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/05 00:17:36 by iren              #+#    #+#             */
-/*   Updated: 2020/09/05 01:00:48 by iren             ###   ########.fr       */
+/*   Updated: 2020/09/05 02:13:29 by iren             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
 {
-	t_list			*res;
+	t_list	*res;
+	t_list	*new_elem;
 
-	if (lst == 0 || del == 0)
+	res = 0;
+	if (lst == 0 || f == 0)
 		return (0);
-	if (!(res = malloc(sizeof(t_list) * (ft_lstsize(lst)))))
-		return (0);
-	while (lst->next)
+	while (lst)
 	{
-		if ((res = ft_lstnew(f(lst))) == 0)
+		if ((new_elem = ft_lstnew((*f)(lst->content))) == 0)
 		{
 			ft_lstclear(&res, del);
 			return (0);
 		}
+		ft_lstadd_back(&res, new_elem);
 		lst = lst->next;
-		res = res->next;
 	}
 	return (res);
 }
